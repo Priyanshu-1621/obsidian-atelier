@@ -1,24 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AboutEducation } from "@/components/portfolio/AboutEducation";
+import { ContactFooter } from "@/components/portfolio/ContactFooter";
+import { CursorInteraction } from "@/components/portfolio/CursorInteraction";
+import { Hero } from "@/components/portfolio/Hero";
+import { Navbar } from "@/components/portfolio/Navbar";
+import { Projects } from "@/components/portfolio/Projects";
+import { RevealObserver } from "@/components/portfolio/RevealObserver";
+import { SkillsCurrent } from "@/components/portfolio/SkillsCurrent";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Priyanshu — Developer, Designer & Builder" },
+      { name: "description", content: "Portfolio of Priyanshu, a Computer Science student building Android, web, AI and product design projects in Jaipur, India." },
+      { property: "og:title", content: "Priyanshu — Developer, Designer & Builder" },
+      { property: "og:description", content: "Android, web, AI and product experiments by Priyanshu, a Computer Science student in Jaipur." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
+  component: PortfolioPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+function PortfolioPage() {
+  return <><RevealObserver /><CursorInteraction /><Navbar /><Hero /><Projects /><AboutEducation /><SkillsCurrent /><ContactFooter /></>;
 }
