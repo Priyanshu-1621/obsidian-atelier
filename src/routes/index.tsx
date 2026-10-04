@@ -25,5 +25,5 @@ export const Route = createFileRoute("/")({
 });
 
 function PortfolioPage() {
-  return <><RevealObserver /><CursorInteraction /><Navbar /><Hero /><Projects /><AboutEducation /><SkillsCurrent /><ContactFooter /></>;
+  return <><RevealObserver /><CursorInteraction /><Navbar /><main><Hero /><Projects /><AboutEducation /><SkillsCurrent /><ContactFooter /></main></>;
 }
