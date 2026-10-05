@@ -27,7 +27,7 @@ function ProjectPage() {
   const index = projects.findIndex((item) => item.slug === project.slug);
   const next = projects[(index + 1) % projects.length];
   return <><RevealObserver /><CursorInteraction /><main className="project-page">
-    <header className="project-page-nav"><Link to="/" hash="work"><ArrowLeft /> ALL WORK</Link><Link to="/" className="project-page-brand">PRIYANSHU<span>.</span></Link><a href="/resume.pdf" target="_blank" rel="noreferrer">RESUME <ArrowUpRight /></a></header>
+    <header className="project-page-nav"><Link to="/" hash="work"><ArrowLeft /> ALL WORK</Link><Link to="/" className="project-page-brand">PRIYANSHU<span>.</span></Link><a href="/resume.pdf" download="Priyanshu_Resume.pdf">RESUME <ArrowUpRight /></a></header>
     <section className="project-hero"><div className="project-hero-meta"><span>PROJECT / {project.number}</span><span>{project.category}</span></div><h1>{project.name}</h1><p>{project.overview}</p><ProjectVisual project={project} detail /></section>
     <section className="project-facts reveal"><div><span>ROLE</span><p>{project.role}</p></div><div><span>TECHNOLOGIES</span><p>{project.technologies.join(" · ")}</p></div><div><span>STATUS</span><p>Independent project</p></div></section>
     <section className="project-story">
