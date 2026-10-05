@@ -25,13 +25,13 @@ export function Navbar() {
       <a href="#home" className="nav-brand" onClick={(event) => { event.preventDefault(); go("#home"); }}>PRIYANSHU<span className="brand-dot">.</span></a>
       <div className="nav-links">
         {items.map((item) => <a key={item.label} href={item.href} className={active === item.href.slice(1) ? "is-active" : ""}>{item.label}<span /></a>)}
-        <a href="/resume.pdf" target="_blank" rel="noreferrer">RESUME ↗</a>
+        <a href="/resume.pdf" download="Priyanshu_Resume.pdf">RESUME ↗</a>
       </div>
       <Button className="menu-trigger" variant="ghost" size="icon" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen((value) => !value)}>{open ? <X /> : <Menu />}</Button>
       <div className={`mobile-menu ${open ? "is-open" : ""}`} aria-hidden={!open}>
         <span className="mobile-menu-label">NAVIGATION / 2026</span>
         {[{ label: "HOME", href: "#home" }, ...items].map((item, index) => <a key={item.label} href={item.href} onClick={(event) => { event.preventDefault(); go(item.href); }}><span>0{index + 1}</span>{item.label}</a>)}
-        <a href="/resume.pdf" target="_blank" rel="noreferrer" onClick={() => setOpen(false)}><span>06</span>RESUME ↗</a>
+        <a href="/resume.pdf" download="Priyanshu_Resume.pdf" onClick={() => setOpen(false)}><span>06</span>RESUME ↗</a>
       </div>
     </nav>
   );
